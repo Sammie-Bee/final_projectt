@@ -1,4 +1,6 @@
-const base = 'http://localhost:5000';
+const base = window.location.hostname === 'localhost'
+? 'http://localhost:5000'
+: 'https://final-projectt-evjs.onrender.com';
 
 async function run() {
   try {

@@ -2,7 +2,9 @@ import { createContext, useContext, useMemo, useState } from 'react';
 import axios from 'axios';
 
 const AuthContext = createContext(null);
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = window.location.hostname === 'localhost'
+? 'http://localhost:5000/api'
+: 'https://final-projectt-evjs.onrender.com/api';
 const AUTH_TOKEN_KEY = 'northstar_token';
 const AUTH_USER_KEY = 'northstar_user';
 const ACCOUNT_NUMBER_PREFIX = 'northstar_account_';

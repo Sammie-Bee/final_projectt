@@ -2,7 +2,9 @@ import { useEffect, useState } from 'react';
 import axios from 'axios';
 import { ArrowDownLeft, ArrowUpRight, CircleDollarSign, Clock3 } from 'lucide-react';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = window.location.hostname === 'localhost'
+? 'http://localhost:5000/api'
+: 'https://final-projectt-evjs.onrender.com/api';
 
 function TransactionHistory() {
   const [transactions, setTransactions] = useState([]);

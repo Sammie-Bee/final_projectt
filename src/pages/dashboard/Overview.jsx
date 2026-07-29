@@ -3,9 +3,7 @@ import { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useAuth } from '../../context/AuthContext';
 
-const API_URL = window.location.hostname === 'localhost'
-? 'http://localhost:5000/api'
-: 'https://final-projectt-evjs.onrender.com/api';
+const API_URL = 'https://final-projectt-evjs.onrender.com/api';
 
 function Overview() {
   const { user, token, updateUser } = useAuth();
